@@ -7,6 +7,7 @@
 //
 
 #import "GPXTraxTests.h"
+#import "GPSExchangeFile.h"
 
 @implementation GPXTraxTests
 
@@ -26,7 +27,23 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in GPXTraxTests");
+
+    NSData* testData = [[NSData alloc] initWithContentsOfFile:@"GPXTrax/100713-1.gpx"];
+ 
+    GPSExchangeFile* file = [[GPSExchangeFile alloc] init];
+
+    NSXMLParser* gpxparser = [[NSXMLParser alloc]
+                              initWithData:testData];
+    [gpxparser setDelegate:file];
+    [gpxparser setShouldResolveExternalEntities:YES];
+    bool success = [gpxparser parse];
+    //NSError* error;
+
+    //[file readFromData:testData ofType:@"gpx" error: &error];
+    //STAssertNil(error, @"Error in parse: %@", error);
+    STAssertTrue(success, @"Didn't parse data.");
+
+    //STFail(@"Unit tests are not implemented yet in GPXTraxTests");
 }
 
 @end

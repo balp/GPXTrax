@@ -8,7 +8,18 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface GPSExchangeFile : NSDocument {
+@class Track;
+@class TrackPoint;
+@class TrackSegment;
+
+@interface GPSExchangeFile : NSDocument < NSXMLParserDelegate >{
+    NSXMLParser* gpxparser;
+    NSMutableString* currentStringValue;
+    NSMutableArray* tracks;
+    
+    Track* curTrk;
+    TrackPoint* curTrkPnt;
+    TrackSegment* curTrkSeg;
 }
 
 @end

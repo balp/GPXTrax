@@ -19,6 +19,10 @@
 		AA857BAF142DBB82000BF85E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA857BAD142DBB82000BF85E /* InfoPlist.strings */; };
 		AA857BB1142DBB82000BF85E /* GPXTraxTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AA857BB0142DBB82000BF85E /* GPXTraxTests.h */; };
 		AA857BB3142DBB82000BF85E /* GPXTraxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA857BB2142DBB82000BF85E /* GPXTraxTests.m */; };
+		AA857BBE142DC5D7000BF85E /* TrackPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AA857BBD142DC5D7000BF85E /* TrackPoint.m */; };
+		AA857BC0142DC9F0000BF85E /* 100713-1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AA857BBF142DC9F0000BF85E /* 100713-1.gpx */; };
+		AA857BC3142DE6E5000BF85E /* TrackSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AA857BC2142DE6E5000BF85E /* TrackSegment.m */; };
+		AA857BC6142DEEB1000BF85E /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = AA857BC5142DEEB1000BF85E /* Track.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +41,28 @@
 		AA857B87142DBB81000BF85E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		AA857B88142DBB81000BF85E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AA857B89142DBB81000BF85E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		AA857B8C142DBB81000BF85E /* GPXTrax-Info.plist */ = {isa = PBXFileReference; path = "GPXTrax-Info.plist"; sourceTree = "<group>"; };
+		AA857B8C142DBB81000BF85E /* GPXTrax-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GPXTrax-Info.plist"; sourceTree = "<group>"; };
 		AA857B8E142DBB81000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA857B90142DBB81000BF85E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AA857B92142DBB81000BF85E /* GPXTrax-Prefix.pch */ = {isa = PBXFileReference; path = "GPXTrax-Prefix.pch"; sourceTree = "<group>"; };
+		AA857B92142DBB81000BF85E /* GPXTrax-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GPXTrax-Prefix.pch"; sourceTree = "<group>"; };
 		AA857B94142DBB81000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		AA857B96142DBB82000BF85E /* GPSExchangeFile.h */ = {isa = PBXFileReference; path = GPSExchangeFile.h; sourceTree = "<group>"; };
+		AA857B96142DBB82000BF85E /* GPSExchangeFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPSExchangeFile.h; sourceTree = "<group>"; };
 		AA857B97142DBB82000BF85E /* GPSExchangeFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPSExchangeFile.m; sourceTree = "<group>"; };
 		AA857B9A142DBB82000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GPSExchangeFile.xib; sourceTree = "<group>"; };
 		AA857B9D142DBB82000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AA857BA4142DBB82000BF85E /* GPXTraxTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPXTraxTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA857BA5142DBB82000BF85E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		AA857BAC142DBB82000BF85E /* GPXTraxTests-Info.plist */ = {isa = PBXFileReference; path = "GPXTraxTests-Info.plist"; sourceTree = "<group>"; };
+		AA857BAC142DBB82000BF85E /* GPXTraxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GPXTraxTests-Info.plist"; sourceTree = "<group>"; };
 		AA857BAE142DBB82000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA857BB0142DBB82000BF85E /* GPXTraxTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPXTraxTests.h; sourceTree = "<group>"; };
 		AA857BB2142DBB82000BF85E /* GPXTraxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPXTraxTests.m; sourceTree = "<group>"; };
+		AA857BBC142DC5D7000BF85E /* TrackPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPoint.h; sourceTree = "<group>"; };
+		AA857BBD142DC5D7000BF85E /* TrackPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPoint.m; sourceTree = "<group>"; };
+		AA857BBF142DC9F0000BF85E /* 100713-1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "100713-1.gpx"; path = "../GPXTrax/100713-1.gpx"; sourceTree = "<group>"; };
+		AA857BC1142DE6E5000BF85E /* TrackSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackSegment.h; sourceTree = "<group>"; };
+		AA857BC2142DE6E5000BF85E /* TrackSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSegment.m; sourceTree = "<group>"; };
+		AA857BC4142DEEB1000BF85E /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		AA857BC5142DEEB1000BF85E /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +131,12 @@
 				AA857B96142DBB82000BF85E /* GPSExchangeFile.h */,
 				AA857B97142DBB82000BF85E /* GPSExchangeFile.m */,
 				AA857B99142DBB82000BF85E /* GPSExchangeFile.xib */,
+				AA857BC4142DEEB1000BF85E /* Track.h */,
+				AA857BC5142DEEB1000BF85E /* Track.m */,
+				AA857BBC142DC5D7000BF85E /* TrackPoint.h */,
+				AA857BBD142DC5D7000BF85E /* TrackPoint.m */,
+				AA857BC1142DE6E5000BF85E /* TrackSegment.h */,
+				AA857BC2142DE6E5000BF85E /* TrackSegment.m */,
 				AA857B9C142DBB82000BF85E /* MainMenu.xib */,
 				AA857B8B142DBB81000BF85E /* Supporting Files */,
 			);
@@ -151,6 +168,7 @@
 		AA857BAB142DBB82000BF85E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA857BBF142DC9F0000BF85E /* 100713-1.gpx */,
 				AA857BAC142DBB82000BF85E /* GPXTraxTests-Info.plist */,
 				AA857BAD142DBB82000BF85E /* InfoPlist.strings */,
 			);
@@ -231,6 +249,7 @@
 				AA857B95142DBB81000BF85E /* Credits.rtf in Resources */,
 				AA857B9B142DBB82000BF85E /* GPSExchangeFile.xib in Resources */,
 				AA857B9E142DBB82000BF85E /* MainMenu.xib in Resources */,
+				AA857BC0142DC9F0000BF85E /* 100713-1.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +287,9 @@
 			files = (
 				AA857B91142DBB81000BF85E /* main.m in Sources */,
 				AA857B98142DBB82000BF85E /* GPSExchangeFile.m in Sources */,
+				AA857BBE142DC5D7000BF85E /* TrackPoint.m in Sources */,
+				AA857BC3142DE6E5000BF85E /* TrackSegment.m in Sources */,
+				AA857BC6142DEEB1000BF85E /* Track.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

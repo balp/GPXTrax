@@ -7,6 +7,9 @@
 //
 
 #import "GPSExchangeFile.h"
+#import "Track.h"
+#import "TrackPoint.h"
+#import "TrackSegment.h"
 
 @implementation GPSExchangeFile
 
@@ -14,8 +17,7 @@
 {
     self = [super init];
     if (self) {
-        // Add your subclass-specific initialization here.
-        // If an error occurs here, send a [self release] message and return nil.
+        tracks = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -47,20 +49,70 @@
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
-    /*
-    Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
-    You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-    If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-    */
+    
+    gpxparser = [[NSXMLParser alloc] initWithData:data];
+    [gpxparser setDelegate:self];
+    [gpxparser setShouldResolveExternalEntities:YES];
+    bool success = [gpxparser parse];
+    
+    
+    
     if (outError) {
         *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
     }
-    return YES;
+    return success;
 }
 
 + (BOOL)autosavesInPlace
 {
-    return YES;
+    return NO;
 }
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    NSLog(@"parser start %@",  elementName);
+    if ( [elementName isEqualToString:@"trkpt"]) {
+        NSLog(@"New trkpt attributes %@", attributeDict);
+        curTrkPnt =[[TrackPoint alloc] initWithLat: [attributeDict valueForKey:@"lat"] Lon: [attributeDict valueForKey:@"lon"] ];
+    } else if ( [elementName isEqualToString:@"trkseg"]) {
+        curTrkSeg = [[TrackSegment alloc] init];
+        [curTrk addTrackSegment:curTrkSeg];
+    } else if ( [elementName isEqualToString:@"trk"]) {
+        curTrk = [[Track alloc] init];
+        [tracks addObject:curTrk];
+    }
+
+    [currentStringValue setString:@""];
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    if (!currentStringValue) {
+        // currentStringValue is an NSMutableString instance variable
+        currentStringValue = [[NSMutableString alloc] initWithCapacity:50];
+    }
+    [currentStringValue appendString:string];
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+{
+    
+    if ( [elementName isEqualToString:@"trkpt"]) {
+        [curTrkSeg addTrackPoint:curTrkPnt];
+        
+        NSLog(@"End of trkpt data %@ [%f %f, %@, %f] now %lu",
+              curTrkPnt, curTrkPnt.m_lat, curTrkPnt.m_lon, curTrkPnt.when, curTrkPnt.elevation, [curTrkSeg count] );
+        
+    } else if ( [elementName isEqualToString:@"ele"]) {
+        curTrkPnt.elevation = [currentStringValue doubleValue];
+    } else if ( [elementName isEqualToString:@"time"]) {
+        NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z"];
+        NSDate* date = [dateFormatter dateFromString:currentStringValue];
+        curTrkPnt.when = date;
+    } else {
+        NSLog(@"parser end %@",  elementName);
+    }
+}
+
 
 @end

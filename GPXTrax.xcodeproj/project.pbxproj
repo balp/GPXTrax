@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA857B85142DBB81000BF85E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA857B84142DBB81000BF85E /* Cocoa.framework */; };
+		AA857B8F142DBB81000BF85E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA857B8D142DBB81000BF85E /* InfoPlist.strings */; };
+		AA857B91142DBB81000BF85E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA857B90142DBB81000BF85E /* main.m */; };
+		AA857B95142DBB81000BF85E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AA857B93142DBB81000BF85E /* Credits.rtf */; };
+		AA857B98142DBB82000BF85E /* GPSExchangeFile.m in Sources */ = {isa = PBXBuildFile; fileRef = AA857B97142DBB82000BF85E /* GPSExchangeFile.m */; };
+		AA857B9B142DBB82000BF85E /* GPSExchangeFile.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA857B99142DBB82000BF85E /* GPSExchangeFile.xib */; };
+		AA857B9E142DBB82000BF85E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA857B9C142DBB82000BF85E /* MainMenu.xib */; };
+		AA857BA6142DBB82000BF85E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA857BA5142DBB82000BF85E /* SenTestingKit.framework */; };
+		AA857BA7142DBB82000BF85E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA857B84142DBB81000BF85E /* Cocoa.framework */; };
+		AA857BAF142DBB82000BF85E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA857BAD142DBB82000BF85E /* InfoPlist.strings */; };
+		AA857BB1142DBB82000BF85E /* GPXTraxTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AA857BB0142DBB82000BF85E /* GPXTraxTests.h */; };
+		AA857BB3142DBB82000BF85E /* GPXTraxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA857BB2142DBB82000BF85E /* GPXTraxTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA857BA8142DBB82000BF85E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA857B77142DBB81000BF85E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA857B7F142DBB81000BF85E;
+			remoteInfo = GPXTrax;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA857B80142DBB81000BF85E /* GPXTrax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPXTrax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA857B84142DBB81000BF85E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AA857B87142DBB81000BF85E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		AA857B88142DBB81000BF85E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AA857B89142DBB81000BF85E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA857B8C142DBB81000BF85E /* GPXTrax-Info.plist */ = {isa = PBXFileReference; path = "GPXTrax-Info.plist"; sourceTree = "<group>"; };
+		AA857B8E142DBB81000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA857B90142DBB81000BF85E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA857B92142DBB81000BF85E /* GPXTrax-Prefix.pch */ = {isa = PBXFileReference; path = "GPXTrax-Prefix.pch"; sourceTree = "<group>"; };
+		AA857B94142DBB81000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AA857B96142DBB82000BF85E /* GPSExchangeFile.h */ = {isa = PBXFileReference; path = GPSExchangeFile.h; sourceTree = "<group>"; };
+		AA857B97142DBB82000BF85E /* GPSExchangeFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPSExchangeFile.m; sourceTree = "<group>"; };
+		AA857B9A142DBB82000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GPSExchangeFile.xib; sourceTree = "<group>"; };
+		AA857B9D142DBB82000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AA857BA4142DBB82000BF85E /* GPXTraxTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPXTraxTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA857BA5142DBB82000BF85E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AA857BAC142DBB82000BF85E /* GPXTraxTests-Info.plist */ = {isa = PBXFileReference; path = "GPXTraxTests-Info.plist"; sourceTree = "<group>"; };
+		AA857BAE142DBB82000BF85E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA857BB0142DBB82000BF85E /* GPXTraxTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPXTraxTests.h; sourceTree = "<group>"; };
+		AA857BB2142DBB82000BF85E /* GPXTraxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPXTraxTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA857B7D142DBB81000BF85E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA857B85142DBB81000BF85E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA857BA0142DBB82000BF85E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA857BA6142DBB82000BF85E /* SenTestingKit.framework in Frameworks */,
+				AA857BA7142DBB82000BF85E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA857B75142DBB81000BF85E = {
+			isa = PBXGroup;
+			children = (
+				AA857B8A142DBB81000BF85E /* GPXTrax */,
+				AA857BAA142DBB82000BF85E /* GPXTraxTests */,
+				AA857B83142DBB81000BF85E /* Frameworks */,
+				AA857B81142DBB81000BF85E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA857B81142DBB81000BF85E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA857B80142DBB81000BF85E /* GPXTrax.app */,
+				AA857BA4142DBB82000BF85E /* GPXTraxTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA857B83142DBB81000BF85E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA857B84142DBB81000BF85E /* Cocoa.framework */,
+				AA857BA5142DBB82000BF85E /* SenTestingKit.framework */,
+				AA857B86142DBB81000BF85E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA857B86142DBB81000BF85E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA857B87142DBB81000BF85E /* AppKit.framework */,
+				AA857B88142DBB81000BF85E /* CoreData.framework */,
+				AA857B89142DBB81000BF85E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		AA857B8A142DBB81000BF85E /* GPXTrax */ = {
+			isa = PBXGroup;
+			children = (
+				AA857B96142DBB82000BF85E /* GPSExchangeFile.h */,
+				AA857B97142DBB82000BF85E /* GPSExchangeFile.m */,
+				AA857B99142DBB82000BF85E /* GPSExchangeFile.xib */,
+				AA857B9C142DBB82000BF85E /* MainMenu.xib */,
+				AA857B8B142DBB81000BF85E /* Supporting Files */,
+			);
+			path = GPXTrax;
+			sourceTree = "<group>";
+		};
+		AA857B8B142DBB81000BF85E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA857B8C142DBB81000BF85E /* GPXTrax-Info.plist */,
+				AA857B8D142DBB81000BF85E /* InfoPlist.strings */,
+				AA857B90142DBB81000BF85E /* main.m */,
+				AA857B92142DBB81000BF85E /* GPXTrax-Prefix.pch */,
+				AA857B93142DBB81000BF85E /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA857BAA142DBB82000BF85E /* GPXTraxTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA857BB0142DBB82000BF85E /* GPXTraxTests.h */,
+				AA857BB2142DBB82000BF85E /* GPXTraxTests.m */,
+				AA857BAB142DBB82000BF85E /* Supporting Files */,
+			);
+			path = GPXTraxTests;
+			sourceTree = "<group>";
+		};
+		AA857BAB142DBB82000BF85E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA857BAC142DBB82000BF85E /* GPXTraxTests-Info.plist */,
+				AA857BAD142DBB82000BF85E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA857B7F142DBB81000BF85E /* GPXTrax */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA857BB6142DBB82000BF85E /* Build configuration list for PBXNativeTarget "GPXTrax" */;
+			buildPhases = (
+				AA857B7C142DBB81000BF85E /* Sources */,
+				AA857B7D142DBB81000BF85E /* Frameworks */,
+				AA857B7E142DBB81000BF85E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GPXTrax;
+			productName = GPXTrax;
+			productReference = AA857B80142DBB81000BF85E /* GPXTrax.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA857BA3142DBB82000BF85E /* GPXTraxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA857BB9142DBB82000BF85E /* Build configuration list for PBXNativeTarget "GPXTraxTests" */;
+			buildPhases = (
+				AA857B9F142DBB82000BF85E /* Sources */,
+				AA857BA0142DBB82000BF85E /* Frameworks */,
+				AA857BA1142DBB82000BF85E /* Resources */,
+				AA857BA2142DBB82000BF85E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA857BA9142DBB82000BF85E /* PBXTargetDependency */,
+			);
+			name = GPXTraxTests;
+			productName = GPXTraxTests;
+			productReference = AA857BA4142DBB82000BF85E /* GPXTraxTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA857B77142DBB81000BF85E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Anders Arnholm";
+			};
+			buildConfigurationList = AA857B7A142DBB81000BF85E /* Build configuration list for PBXProject "GPXTrax" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA857B75142DBB81000BF85E;
+			productRefGroup = AA857B81142DBB81000BF85E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA857B7F142DBB81000BF85E /* GPXTrax */,
+				AA857BA3142DBB82000BF85E /* GPXTraxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA857B7E142DBB81000BF85E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA857B8F142DBB81000BF85E /* InfoPlist.strings in Resources */,
+				AA857B95142DBB81000BF85E /* Credits.rtf in Resources */,
+				AA857B9B142DBB82000BF85E /* GPSExchangeFile.xib in Resources */,
+				AA857B9E142DBB82000BF85E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA857BA1142DBB82000BF85E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA857BAF142DBB82000BF85E /* InfoPlist.strings in Resources */,
+				AA857BB1142DBB82000BF85E /* GPXTraxTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA857BA2142DBB82000BF85E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA857B7C142DBB81000BF85E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA857B91142DBB81000BF85E /* main.m in Sources */,
+				AA857B98142DBB82000BF85E /* GPSExchangeFile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA857B9F142DBB82000BF85E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA857BB3142DBB82000BF85E /* GPXTraxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA857BA9142DBB82000BF85E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA857B7F142DBB81000BF85E /* GPXTrax */;
+			targetProxy = AA857BA8142DBB82000BF85E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA857B8D142DBB81000BF85E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA857B8E142DBB81000BF85E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AA857B93142DBB81000BF85E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA857B94142DBB81000BF85E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		AA857B99142DBB82000BF85E /* GPSExchangeFile.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA857B9A142DBB82000BF85E /* en */,
+			);
+			name = GPSExchangeFile.xib;
+			sourceTree = "<group>";
+		};
+		AA857B9C142DBB82000BF85E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA857B9D142DBB82000BF85E /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		AA857BAD142DBB82000BF85E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA857BAE142DBB82000BF85E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA857BB4142DBB82000BF85E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AA857BB5142DBB82000BF85E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AA857BB7142DBB82000BF85E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GPXTrax/GPXTrax-Prefix.pch";
+				INFOPLIST_FILE = "GPXTrax/GPXTrax-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AA857BB8142DBB82000BF85E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GPXTrax/GPXTrax-Prefix.pch";
+				INFOPLIST_FILE = "GPXTrax/GPXTrax-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AA857BBA142DBB82000BF85E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GPXTrax.app/Contents/MacOS/GPXTrax";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GPXTrax/GPXTrax-Prefix.pch";
+				INFOPLIST_FILE = "GPXTraxTests/GPXTraxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AA857BBB142DBB82000BF85E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GPXTrax.app/Contents/MacOS/GPXTrax";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GPXTrax/GPXTrax-Prefix.pch";
+				INFOPLIST_FILE = "GPXTraxTests/GPXTraxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA857B7A142DBB81000BF85E /* Build configuration list for PBXProject "GPXTrax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA857BB4142DBB82000BF85E /* Debug */,
+				AA857BB5142DBB82000BF85E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA857BB6142DBB82000BF85E /* Build configuration list for PBXNativeTarget "GPXTrax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA857BB7142DBB82000BF85E /* Debug */,
+				AA857BB8142DBB82000BF85E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AA857BB9142DBB82000BF85E /* Build configuration list for PBXNativeTarget "GPXTraxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA857BBA142DBB82000BF85E /* Debug */,
+				AA857BBB142DBB82000BF85E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA857B77142DBB81000BF85E /* Project object */;
+}

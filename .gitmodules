@@ -1,0 +1,3 @@
+[submodule "MacMapKit"]
+	path = MacMapKit
+	url = https://github.com/Oomph/MacMapKit.git

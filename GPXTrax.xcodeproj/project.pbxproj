@@ -23,6 +23,9 @@
 		AA857BC0142DC9F0000BF85E /* 100713-1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AA857BBF142DC9F0000BF85E /* 100713-1.gpx */; };
 		AA857BC3142DE6E5000BF85E /* TrackSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AA857BC2142DE6E5000BF85E /* TrackSegment.m */; };
 		AA857BC6142DEEB1000BF85E /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = AA857BC5142DEEB1000BF85E /* Track.m */; };
+		AAF82340142DFF8B00E1C99A /* MapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAF8233F142DFF8B00E1C99A /* MapKit.framework */; };
+		AAF82342142DFFA800E1C99A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF82341142DFFA700E1C99A /* MapKit.framework */; };
+		AAF82344142DFFB100E1C99A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF82343142DFFB100E1C99A /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,19 @@
 			remoteInfo = GPXTrax;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AAF8233E142DFF6100E1C99A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AAF82340142DFF8B00E1C99A /* MapKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AA857B80142DBB81000BF85E /* GPXTrax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPXTrax.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +79,9 @@
 		AA857BC2142DE6E5000BF85E /* TrackSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSegment.m; sourceTree = "<group>"; };
 		AA857BC4142DEEB1000BF85E /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		AA857BC5142DEEB1000BF85E /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		AAF8233F142DFF8B00E1C99A /* MapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF82341142DFFA700E1C99A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/GPX:XML-cfctjeujxgrngtbfvzddleqtguhw/Build/Products/Debug/MapKit.framework"; sourceTree = "<group>"; };
+		AAF82343142DFFB100E1C99A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +90,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA857B85142DBB81000BF85E /* Cocoa.framework in Frameworks */,
+				AAF82344142DFFB100E1C99A /* CoreLocation.framework in Frameworks */,
+				AAF82342142DFFA800E1C99A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +110,9 @@
 		AA857B75142DBB81000BF85E = {
 			isa = PBXGroup;
 			children = (
+				AAF82343142DFFB100E1C99A /* CoreLocation.framework */,
+				AAF82341142DFFA700E1C99A /* MapKit.framework */,
+				AAF8233F142DFF8B00E1C99A /* MapKit.framework */,
 				AA857B8A142DBB81000BF85E /* GPXTrax */,
 				AA857BAA142DBB82000BF85E /* GPXTraxTests */,
 				AA857B83142DBB81000BF85E /* Frameworks */,
@@ -183,6 +207,7 @@
 			buildConfigurationList = AA857BB6142DBB82000BF85E /* Build configuration list for PBXNativeTarget "GPXTrax" */;
 			buildPhases = (
 				AA857B7C142DBB81000BF85E /* Sources */,
+				AAF8233E142DFF6100E1C99A /* CopyFiles */,
 				AA857B7D142DBB81000BF85E /* Frameworks */,
 				AA857B7E142DBB81000BF85E /* Resources */,
 			);
@@ -403,8 +428,14 @@
 		AA857BB7142DBB82000BF85E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/GPX:XML-cfctjeujxgrngtbfvzddleqtguhw/Build/Products/Debug\"",
+					"\"$(DEVELOPER_DIR)/SDKs/MacOSX10.6.sdk/System/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GPXTrax/GPXTrax-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = "GPXTrax/GPXTrax-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -414,8 +445,14 @@
 		AA857BB8142DBB82000BF85E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/GPX:XML-cfctjeujxgrngtbfvzddleqtguhw/Build/Products/Debug\"",
+					"\"$(DEVELOPER_DIR)/SDKs/MacOSX10.6.sdk/System/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GPXTrax/GPXTrax-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = "GPXTrax/GPXTrax-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -469,6 +506,7 @@
 				AA857BB8142DBB82000BF85E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA857BB9142DBB82000BF85E /* Build configuration list for PBXNativeTarget "GPXTraxTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +515,7 @@
 				AA857BBB142DBB82000BF85E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

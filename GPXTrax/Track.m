@@ -7,9 +7,11 @@
 //
 
 #import "Track.h"
-
+#import "TrackSegment.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation Track
+@synthesize name;
 
 - (id)init
 {
@@ -26,5 +28,25 @@
     [segments addObject:segment];
 }
 
+- (NSUInteger) count
+{
+    return [segments count];
+}
 
+- (id)objectAtIndex:(NSUInteger)index
+{
+    return [segments objectAtIndex:index];
+}
+
+- (CLLocationCoordinate2D) centerCoordinate
+{
+    CLLocationCoordinate2D center;
+    for (TrackSegment* segment in segments) {
+        center.latitude += [segment centerCoordinate].latitude;
+        center.longitude += [segment centerCoordinate].longitude;
+    }
+    center.latitude = center.latitude/[segments count];
+    center.longitude = center.longitude/[segments count];
+    return center;
+}
 @end

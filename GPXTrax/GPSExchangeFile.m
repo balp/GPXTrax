@@ -11,7 +11,13 @@
 #import "TrackPoint.h"
 #import "TrackSegment.h"
 
+#import <MapKit.h>
+
+
 @implementation GPSExchangeFile
+
+@synthesize treeview;
+@synthesize mapview;
 
 - (id)init
 {
@@ -54,8 +60,9 @@
     [gpxparser setDelegate:self];
     [gpxparser setShouldResolveExternalEntities:YES];
     bool success = [gpxparser parse];
+    [treeview reloadData];
     
-    
+
     
     if (outError) {
         *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
@@ -97,11 +104,7 @@
 {
     
     if ( [elementName isEqualToString:@"trkpt"]) {
-        [curTrkSeg addTrackPoint:curTrkPnt];
-        
-        NSLog(@"End of trkpt data %@ [%f %f, %@, %f] now %lu",
-              curTrkPnt, curTrkPnt.m_lat, curTrkPnt.m_lon, curTrkPnt.when, curTrkPnt.elevation, [curTrkSeg count] );
-        
+        [curTrkSeg addTrackPoint:curTrkPnt];        
     } else if ( [elementName isEqualToString:@"ele"]) {
         curTrkPnt.elevation = [currentStringValue doubleValue];
     } else if ( [elementName isEqualToString:@"time"]) {
@@ -109,10 +112,50 @@
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z"];
         NSDate* date = [dateFormatter dateFromString:currentStringValue];
         curTrkPnt.when = date;
+    } else if ( [elementName isEqualToString:@"name"]) {
+        if (nil != curTrk) {
+            [curTrk setName:currentStringValue];
+        }
     } else {
         NSLog(@"parser end %@",  elementName);
     }
 }
 
 
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
+{
+    if(nil == item) {
+        return [tracks objectAtIndex:index];
+    }
+    return [item objectAtIndex:index];
+}
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
+{
+    return ([item count] > 0);
+}
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
+{
+    if(nil == item) {
+        return [tracks count];
+    }
+    return [item count];
+}
+
+- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
+{
+    return [item name];
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
+{
+    NSLog(@"map is on %@ -> %f, %f", mapview, [mapview region].center.latitude, [mapview region].center.longitude);
+    NSLog(@"map is on %@ -> %f, %f", mapview, [mapview centerCoordinate].latitude, [mapview centerCoordinate].longitude);
+    NSLog(@"center map on %@ -> %f, %f", item, [item centerCoordinate].latitude, [item centerCoordinate].longitude);
+    
+    [mapview setCenterCoordinate:[item centerCoordinate] animated:YES];
+    
+    NSLog(@"map moved to %@ -> %f, %f", mapview, [mapview centerCoordinate].latitude, [mapview centerCoordinate].longitude);
+
+    return YES;
+}
 @end
